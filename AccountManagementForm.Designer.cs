@@ -38,6 +38,8 @@
             flowLayoutPanel1 = new FlowLayoutPanel();
             flowLayoutPanel2 = new FlowLayoutPanel();
             btn_Withdraw = new Button();
+            label3 = new Label();
+            label_AccType = new Label();
             flowLayoutPanel1.SuspendLayout();
             flowLayoutPanel2.SuspendLayout();
             SuspendLayout();
@@ -63,7 +65,7 @@
             // label_Balance
             // 
             label_Balance.AutoSize = true;
-            label_Balance.Location = new Point(158, 36);
+            label_Balance.Location = new Point(158, 61);
             label_Balance.Name = "label_Balance";
             label_Balance.Size = new Size(64, 15);
             label_Balance.TabIndex = 2;
@@ -72,7 +74,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(50, 36);
+            label2.Location = new Point(50, 61);
             label2.Name = "label2";
             label2.Size = new Size(102, 15);
             label2.TabIndex = 3;
@@ -109,7 +111,7 @@
             flowLayoutPanel1.BackColor = SystemColors.ActiveBorder;
             flowLayoutPanel1.Controls.Add(btn_Deposit);
             flowLayoutPanel1.Controls.Add(textBox_DepositAmount);
-            flowLayoutPanel1.Location = new Point(41, 67);
+            flowLayoutPanel1.Location = new Point(41, 88);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(111, 65);
             flowLayoutPanel1.TabIndex = 8;
@@ -119,7 +121,7 @@
             flowLayoutPanel2.BackColor = SystemColors.ActiveBorder;
             flowLayoutPanel2.Controls.Add(btn_Withdraw);
             flowLayoutPanel2.Controls.Add(textBox_WithdrawAmount);
-            flowLayoutPanel2.Location = new Point(158, 67);
+            flowLayoutPanel2.Location = new Point(158, 88);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
             flowLayoutPanel2.Size = new Size(114, 65);
             flowLayoutPanel2.TabIndex = 9;
@@ -134,11 +136,31 @@
             btn_Withdraw.UseVisualStyleBackColor = true;
             btn_Withdraw.Click += btn_Withdraw_Click;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(67, 37);
+            label3.Name = "label3";
+            label3.Size = new Size(85, 15);
+            label3.TabIndex = 10;
+            label3.Text = "Account Type: ";
+            // 
+            // label_AccType
+            // 
+            label_AccType.AutoSize = true;
+            label_AccType.Location = new Point(158, 37);
+            label_AccType.Name = "label_AccType";
+            label_AccType.Size = new Size(92, 15);
+            label_AccType.TabIndex = 11;
+            label_AccType.Text = "<account type>";
+            // 
             // AccountManagementForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(308, 175);
+            Controls.Add(label_AccType);
+            Controls.Add(label3);
             Controls.Add(flowLayoutPanel2);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(label2);
@@ -146,6 +168,8 @@
             Controls.Add(label1);
             Controls.Add(label_Username);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "AccountManagementForm";
             Text = "Account Management";
             Load += AccountManagementForm_Load;
@@ -169,5 +193,7 @@
         private FlowLayoutPanel flowLayoutPanel1;
         private FlowLayoutPanel flowLayoutPanel2;
         private Button btn_Withdraw;
+        private Label label3;
+        private Label label_AccType;
     }
 }

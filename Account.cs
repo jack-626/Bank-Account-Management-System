@@ -9,6 +9,7 @@ namespace Bank_Account_Management_System
     public abstract class Account
     {
         public string Username { get; set; } //Account Username
+        public string AccountType { get; set; }
         protected float balance; //Account Balance
 
         //Methods for depositing and withdrawing.

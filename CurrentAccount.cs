@@ -8,10 +8,11 @@ namespace Bank_Account_Management_System
 {
     public class CurrentAccount : Account
     {
-        //Constructor for account username. Takes username input and sets the username on the parent class.
+        //Constructor for account. Takes username and account type input and sets the username and account type on the parent class.
         public CurrentAccount(string username)
         {
             Username = username;
+            AccountType = "Current";
         }
 
         // Method for depositing money. Checks that deposit amount is valid before adding to the account balance.

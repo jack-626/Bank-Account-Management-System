@@ -31,6 +31,7 @@ namespace Bank_Account_Management_System
 
             label_Username.Text = account.Username; // Set username label text to the accounts username.
             label_Balance.Text = account.GetBalance().ToString(); // Get account balance and update balance label text.
+            label_AccType.Text = account.AccountType; // Get account type and set the account type label.
         }
 
         #region Text Boxes
