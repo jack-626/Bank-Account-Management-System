@@ -10,14 +10,14 @@ namespace Bank_Account_Management_System
     {
         public string Username { get; set; } //Account Username
         public string AccountType { get; set; }
-        protected float balance; //Account Balance
+        protected decimal balance; //Account Balance
 
         //Methods for depositing and withdrawing.
-        public abstract void Deposit(float amount);
-        public abstract void Withdraw(float amount);
+        public abstract void Deposit(decimal amount);
+        public abstract void Withdraw(decimal amount);
 
         //Method for getting current balance
-        public float GetBalance()
+        public decimal GetBalance()
         {
             return balance;
         }

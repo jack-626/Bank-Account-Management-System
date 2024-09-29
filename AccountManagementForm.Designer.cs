@@ -40,14 +40,17 @@
             btn_Withdraw = new Button();
             label3 = new Label();
             label_AccType = new Label();
+            tableLayoutPanel1 = new TableLayoutPanel();
             flowLayoutPanel1.SuspendLayout();
             flowLayoutPanel2.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // label_Username
             // 
             label_Username.AutoSize = true;
-            label_Username.Location = new Point(158, 9);
+            label_Username.Location = new Point(140, 0);
+            label_Username.MaximumSize = new Size(100, 0);
             label_Username.Name = "label_Username";
             label_Username.Size = new Size(75, 15);
             label_Username.TabIndex = 0;
@@ -56,7 +59,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(38, 9);
+            label1.Location = new Point(3, 0);
             label1.Name = "label1";
             label1.Size = new Size(114, 15);
             label1.TabIndex = 1;
@@ -65,16 +68,17 @@
             // label_Balance
             // 
             label_Balance.AutoSize = true;
-            label_Balance.Location = new Point(158, 61);
+            label_Balance.Location = new Point(140, 83);
+            label_Balance.MinimumSize = new Size(100, 0);
             label_Balance.Name = "label_Balance";
-            label_Balance.Size = new Size(64, 15);
+            label_Balance.Size = new Size(100, 15);
             label_Balance.TabIndex = 2;
             label_Balance.Text = "<balance>";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(50, 61);
+            label2.Location = new Point(3, 83);
             label2.Name = "label2";
             label2.Size = new Size(102, 15);
             label2.TabIndex = 3;
@@ -94,7 +98,7 @@
             // 
             textBox_DepositAmount.Location = new Point(3, 32);
             textBox_DepositAmount.Name = "textBox_DepositAmount";
-            textBox_DepositAmount.Size = new Size(100, 23);
+            textBox_DepositAmount.Size = new Size(111, 23);
             textBox_DepositAmount.TabIndex = 5;
             textBox_DepositAmount.TextChanged += textBox_DepositAmount_TextChanged;
             // 
@@ -102,7 +106,7 @@
             // 
             textBox_WithdrawAmount.Location = new Point(3, 32);
             textBox_WithdrawAmount.Name = "textBox_WithdrawAmount";
-            textBox_WithdrawAmount.Size = new Size(100, 23);
+            textBox_WithdrawAmount.Size = new Size(111, 23);
             textBox_WithdrawAmount.TabIndex = 6;
             textBox_WithdrawAmount.TextChanged += textBox_WithdrawAmount_TextChanged;
             // 
@@ -111,9 +115,10 @@
             flowLayoutPanel1.BackColor = SystemColors.ActiveBorder;
             flowLayoutPanel1.Controls.Add(btn_Deposit);
             flowLayoutPanel1.Controls.Add(textBox_DepositAmount);
-            flowLayoutPanel1.Location = new Point(41, 88);
+            flowLayoutPanel1.Dock = DockStyle.Fill;
+            flowLayoutPanel1.Location = new Point(3, 125);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(111, 65);
+            flowLayoutPanel1.Size = new Size(131, 61);
             flowLayoutPanel1.TabIndex = 8;
             // 
             // flowLayoutPanel2
@@ -121,9 +126,10 @@
             flowLayoutPanel2.BackColor = SystemColors.ActiveBorder;
             flowLayoutPanel2.Controls.Add(btn_Withdraw);
             flowLayoutPanel2.Controls.Add(textBox_WithdrawAmount);
-            flowLayoutPanel2.Location = new Point(158, 88);
+            flowLayoutPanel2.Dock = DockStyle.Fill;
+            flowLayoutPanel2.Location = new Point(140, 125);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(114, 65);
+            flowLayoutPanel2.Size = new Size(132, 61);
             flowLayoutPanel2.TabIndex = 9;
             // 
             // btn_Withdraw
@@ -139,7 +145,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(67, 37);
+            label3.Location = new Point(3, 44);
             label3.Name = "label3";
             label3.Size = new Size(85, 15);
             label3.TabIndex = 10;
@@ -148,25 +154,41 @@
             // label_AccType
             // 
             label_AccType.AutoSize = true;
-            label_AccType.Location = new Point(158, 37);
+            label_AccType.Location = new Point(140, 44);
             label_AccType.Name = "label_AccType";
             label_AccType.Size = new Size(92, 15);
             label_AccType.TabIndex = 11;
             label_AccType.Text = "<account type>";
             // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.ColumnCount = 2;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Controls.Add(label1, 0, 0);
+            tableLayoutPanel1.Controls.Add(flowLayoutPanel2, 1, 3);
+            tableLayoutPanel1.Controls.Add(label_AccType, 1, 1);
+            tableLayoutPanel1.Controls.Add(flowLayoutPanel1, 0, 3);
+            tableLayoutPanel1.Controls.Add(label_Username, 1, 0);
+            tableLayoutPanel1.Controls.Add(label2, 0, 2);
+            tableLayoutPanel1.Controls.Add(label3, 0, 1);
+            tableLayoutPanel1.Controls.Add(label_Balance, 1, 2);
+            tableLayoutPanel1.Location = new Point(12, 12);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 4;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 52.5641022F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 47.4358978F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 39F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 66F));
+            tableLayoutPanel1.Size = new Size(275, 189);
+            tableLayoutPanel1.TabIndex = 12;
+            // 
             // AccountManagementForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(308, 175);
-            Controls.Add(label_AccType);
-            Controls.Add(label3);
-            Controls.Add(flowLayoutPanel2);
-            Controls.Add(flowLayoutPanel1);
-            Controls.Add(label2);
-            Controls.Add(label_Balance);
-            Controls.Add(label1);
-            Controls.Add(label_Username);
+            ClientSize = new Size(301, 213);
+            Controls.Add(tableLayoutPanel1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             MinimizeBox = false;
@@ -177,8 +199,9 @@
             flowLayoutPanel1.PerformLayout();
             flowLayoutPanel2.ResumeLayout(false);
             flowLayoutPanel2.PerformLayout();
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -195,5 +218,6 @@
         private Button btn_Withdraw;
         private Label label3;
         private Label label_AccType;
+        private TableLayoutPanel tableLayoutPanel1;
     }
 }

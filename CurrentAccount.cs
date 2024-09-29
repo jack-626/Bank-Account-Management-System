@@ -16,7 +16,7 @@ namespace Bank_Account_Management_System
         }
 
         // Method for depositing money. Checks that deposit amount is valid before adding to the account balance.
-        public override void Deposit(float depositAmount)
+        public override void Deposit(decimal depositAmount)
         {
             if (depositAmount <= 0) // Check that deposit amount is greater than 0. if not, throw an error. 
             {
@@ -29,7 +29,7 @@ namespace Bank_Account_Management_System
         }
 
         // Method for withdrawing money. Checks that the account has sufficient balance and that the withdrawal amount is valid. 
-        public override void Withdraw(float withdrawAmount)
+        public override void Withdraw(decimal withdrawAmount)
         {
             if (withdrawAmount <= 0) // Check that the withdraw amount is greater than 0. if not, throw an error. 
             {

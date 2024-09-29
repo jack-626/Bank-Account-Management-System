@@ -74,8 +74,8 @@ namespace Bank_Account_Management_System
             {
                 if (new Regex(@"^\xA3?\d{1,3}?([,]\d{3}|\d)*?([.]\d{1,2})?$").IsMatch(textBox_DepositAmount.Text)) //Checks for regex pattern match
                 {
-                    account.Deposit(float.Parse(textBox_DepositAmount.Text.Replace("£", " "))); // Deposit money to account. Removes and replaces £ symbol with nothing and converts the string to a float. 
-                    label_Balance.Text = account.GetBalance().ToString(); // Update balance text box
+                    account.Deposit(decimal.Parse(textBox_DepositAmount.Text.Replace("£", " "))); // Deposit money to account. Removes and replaces £ symbol with nothing and converts the string to a float. 
+                    label_Balance.Text = account.GetBalance().ToString("C"); // Update balance text box
                 }
                 else
                 {
@@ -94,8 +94,8 @@ namespace Bank_Account_Management_System
             {
                 if (new Regex(@"^\xA3?\d{1,3}?([,]\d{3}|\d)*?([.]\d{1,2})?$").IsMatch(textBox_WithdrawAmount.Text)) //Checks for regex pattern match
                 {
-                    account.Withdraw(float.Parse(textBox_WithdrawAmount.Text.Replace("£", " "))); // Withdraw money from account. Removes and replaces "£" symbol with nothing and converts the string to a float. 
-                    label_Balance.Text = account.GetBalance().ToString(); // Update balance text box
+                    account.Withdraw(decimal.Parse(textBox_WithdrawAmount.Text.Replace("£", " "))); // Withdraw money from account. Removes and replaces "£" symbol with nothing and converts the string to a float. 
+                    label_Balance.Text = account.GetBalance().ToString("C"); // Update balance text box
                 }
                 else
                 {
